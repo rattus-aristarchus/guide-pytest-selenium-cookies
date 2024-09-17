@@ -16,13 +16,13 @@ def login():
 
 
 @pytest.fixture
-def token():
-    return os.getenv("TOKEN")
+def password():
+    return os.getenv("PASSWORD")
 
 
 @pytest.fixture
 def domain():
-    return "en.wikipedia.org"
+    return "www.saucedemo.com"
 
 
 @pytest.fixture
@@ -31,7 +31,7 @@ def driver():
     The fixture that our tests call to get access to a driver.
     """
 
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
 
     yield driver
 

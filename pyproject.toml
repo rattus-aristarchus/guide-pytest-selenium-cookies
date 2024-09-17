@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest_selenium_cookies"
+version = "0.0.0"
+description = "A demo for a guide on using cookies with PyTest and Selenium"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12"
+]
+dependencies = [
+    # Put the project's production dependencies here:
+
+]
+
+[project.optional-dependencies]
+dev = [
+    # Put the project's dev dependencies here:
+    "allure-pytest",
+    "flake8",
+    "flake8-builtins",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]

@@ -2,9 +2,9 @@ import allure
 from allure_commons.types import ParameterMode
 
 
-def test_cookie(driver, login, token, domain):
+def test_cookie(driver, login, password, domain):
     allure.dynamic.parameter("Login", login, mode=ParameterMode.MASKED)
-    allure.dynamic.parameter("Token", token, mode=ParameterMode.MASKED)
+    allure.dynamic.parameter("Token", password, mode=ParameterMode.MASKED)
     allure.dynamic.parameter("Domain", domain)
 
     with allure.step("Open the main page"):
@@ -19,7 +19,7 @@ def test_cookie(driver, login, token, domain):
         })
         driver.add_cookie({
             "name": "centralauth_Token",
-            "value": token,
+            "value": password,
             "domain": domain,
             "path": "/"
         })
